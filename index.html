@@ -54,7 +54,10 @@
     <div>
       <section class="hero">
           <h1 class="hero-title">эффективные решения для вашего бизнеса</h1>
-          <a href="" class="button primary">Заказать услугу</a>
+         <!-- <a href="" class="button primary">Заказать услугу</a>-->
+          <button class="button primary" data-modal-open>Заказать услугу</button>
+          
+          
       </section>
     </div>
 
@@ -274,6 +277,54 @@
         </ul>
       </div>    
     </section>
+
+    <!--Модальное окно-->
+
+    <div class="backdrop is-hidden" data-modal>
+        <form class="form js-speaker-form" autocomplete="off">
+        
+          <button class="close" data-modal-close></button>
+        
+          <h2>Оставьте свои данные, мы вам перезвоним</h2>
+        
+          <div class="form-field">
+            <input type="text" class="form-input" name="name" id="name" placeholder=" "/>
+            <label for="name" class="form-label">Имя</label>
+            <span class="icon person"></span>
+          </div>
+        
+          <div class="form-field-1">
+            <input type="tel" class="form-input" name="tel" id="tel" placeholder=" " />
+            <label for="tel" class="form-label">Телефон</label> 
+            <span class="icon telefon"></span>   
+          </div>
+        
+          <label for="mail" class="form-field-2">
+            <input type="email" class="form-input" name="mail" placeholder=" "/>
+            <span class="form-label">Почта</span>
+            <span class="icon email"></span>
+          </label>
+        
+          <div class="form-field">     
+            <textarea name="comment" id="comment" rows="5" placeholder=" " autofocus></textarea>
+            <label for="comment" class="form-label-comment">Комментарий</label>
+          </div>
+        
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox">
+            <span class="checkbox-icon"></span>
+            Cоглашаюсь с рассылкой и принимаю <a href="">Условия договора</a>
+          </label>         
+          
+          
+        
+          
+        
+          <br/>
+            <button type="submit" class="button-modal">Отправить</button>
+        </form> 
+        </div>
+
     </main>
    <!--Логотип, физический адрес, контакты, страницы в соц. сетях, подписка на рассылку-->
    <footer class="footer">
@@ -320,15 +371,34 @@
           </ul>
       </div>
       
-      <div class="rassilka">
+      <form class="rassilka">      
           <p class="signecher">подписаться на рассылку</p> 
-          <input type="text" name="user_name" />
-          <button type="submit" class="button primary">Подписаться</button>
-      </div>
+          <input type="email" name="mail" id="mail" autocomplete="off"  placeholder="E-mail"/>
+          <button type="submit"class="button primary">Подписаться</button>    
+      </form>
   </div>  
       
       <p class="footer-down">2020 | Developed by GoIT Students </p>
 
   </footer>
-  </body>
+
+  <script>
+    (() => {
+      document
+        .querySelector('.js-speaker-form')
+        .addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) =>
+            console.log(`${name}: ${value}`),
+          );
+
+          e.currentTarget.reset();
+        });
+    })();        
+</script> 
+
+<script src="./js/modal.js"></script>
+
+</body>
 </html>

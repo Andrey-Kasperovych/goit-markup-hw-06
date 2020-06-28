@@ -534,9 +534,21 @@ span{color: var(--accent);}
 }
 
 .rassilka {
-    margin-left: auto;
-    
+    margin-left: auto;  
 }
+
+.rassilka input{
+    width: 358px;
+    height: 50px;
+    padding: 15px 16px;
+    margin-right: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: #2F303A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+
 
 .connect-glav {
     margin-left: 69px;
@@ -587,7 +599,8 @@ span{color: var(--accent);}
     font-weight: bold;
     font-size: 16px;
     line-height: 1.87;                    
-    letter-spacing: 0.06em;   
+    letter-spacing: 0.06em;  
+    border-color: var(--accent) ; 
 }
 
 .button.secondary{
@@ -823,3 +836,289 @@ span{color: var(--accent);}
     transform: translateY(-325px);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+/* Модальное окно */
+
+fieldset{
+    border-width: 5px;
+    border-color: 0;
+  }
+  
+  textarea{
+    resize: none;
+    outline: none;
+    padding-left: 25px;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+  }
+  
+  .backdrop.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .form{
+    position: relative;
+    width: 528px;    
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    background-color: #fff;
+  }
+  
+  .form h2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+  }
+
+  .form-field{
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-bottom: 20px;
+  } 
+  
+  
+  
+  .form-input:focus + .form-label,
+  .form-input:not(:placeholder-shown) + .form-label,
+  .form-field-1:focus-within > .form-label {
+    transform: translate(-26px, -40px);
+    color: #2196F3;  
+  }
+  
+  .form-input:focus, 
+   textarea:focus{
+    border: 1px solid #2196F3;
+  }
+  
+  
+  .form-input{
+    width: 100%;
+    display: block;
+    width: 448px;
+    height: 40px; 
+    border: 1px solid rgba(33, 33, 33, 0.2);  
+    border-radius: 4px; 
+    margin: 0;
+    padding: 6px 10px;
+    padding-left: 42px;
+    outline: none;
+  }
+
+  .form-label{
+      
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    
+    position: absolute;
+    display: block;
+    
+    top: 50%;
+    left: 42px;
+    transform: translateY(-50%);
+    transition: transform 250ms linear;
+    color: #757575;  
+  }
+  
+  .form-label-comment{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    
+    position: absolute;
+    display: block;
+    
+    top: 18px;
+    left: 16px;
+    transform: translateY(-50%);
+    transition: transform 250ms linear;
+    color: #757575; }
+  
+    .form-field textarea:focus + .form-label-comment,
+    .form-field textarea:not(:placeholder-shown) + .form-label-comment
+    {
+      transform: translate(-26px, -40px);  
+      color: #2196F3;
+    }
+
+    .icon{
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        left: 19px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+         
+      }      
+           
+      .icon.person{
+        background-image: url(../images/person.svg)
+      }
+      
+      .form-input:focus ~ .icon.person{
+        background-image: url(../images/person-hover.svg)
+      }
+      
+      .icon.telefon{
+        background-image: url(../images/phone.svg)
+      }
+      
+      .form-input:focus ~ .icon.telefon{
+        background-image: url(../images/phone-hover.svg)
+      }
+      
+      .icon.email{
+        background-image: url(../images/email.svg)
+      }
+      
+      .form-input:focus ~ .icon.email{
+        background-image: url(../images/email-hover.svg)
+      }
+
+      .form-field-1{
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-bottom: 20px;
+      } 
+
+      .form-field-1:focus-within > .form-input{
+        border: 1px solid #2196F3;
+      }
+      
+      /* Избавляемся от id */
+      
+      .form-field-2{
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-bottom: 20px;
+      } 
+
+      /* Кастомный checkbox */
+
+.checkbox-label{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+  }
+  
+  .checkbox-label a{
+    text-indent: 5px;
+  }
+  
+  
+  
+   .checkbox{
+    position: absolute;
+    
+    margin-left: 12px;
+    appearance: none; 
+    -webkit-appearance: none; 
+  }
+  
+  .checkbox-icon{  
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+    
+    border: 1px solid black;
+    border-radius: 2px;
+  }
+  
+  .checkbox:checked + .checkbox-icon{
+    background-color: #2196F3;
+    background-image: url(../images/full-check.svg);
+    background-size: contain;
+    background-origin: border-box;
+    border-color: #2196F3;
+  }
+
+  /* Кнопка закрыть и открыть */
+
+.close{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    transform: translate(-8px, 8px);
+    width: 30px;
+    height: 30px;  
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-image: url(../images/close.svg);
+    background-size: contain;
+    border-radius: 50%;  
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+  }
+  
+  .close:hover{  
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-image: url(../images/close-hover2.svg);  
+  }
+
+  .button-modal{
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+  
+  
+    
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+  
+    color: #FFFFFF;
+  
+    width: 200px;
+    height: 50px;
+    margin-left: 115px;
+    background-color: #2196F3;
+    border-color: #2196F3;
+    border-radius: 4px;
+    outline: none;
+  }
