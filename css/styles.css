@@ -872,10 +872,9 @@ fieldset{
     position: relative;
     width: 528px;    
     border-radius: 4px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 40px;
     background-color: #fff;
   }
@@ -1098,27 +1097,31 @@ fieldset{
     background-image: url(../images/close-hover2.svg);  
   }
 
-  .button-modal{
+  .button-modal{     
+    right: 50%;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.06em;
   
+    color: #FFFFFF;
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    /* margin-left: 115px; */
+    background-color: #2196F3;
+    border-color: #2196F3;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .button-modal a{
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 30px;
-  
-  
-    
-    align-items: center;
-    text-align: center;
     letter-spacing: 0.06em;
-  
     color: #FFFFFF;
-  
-    width: 200px;
-    height: 50px;
-    margin-left: 115px;
-    background-color: #2196F3;
-    border-color: #2196F3;
-    border-radius: 4px;
-    outline: none;
+    text-decoration: none;
   }
